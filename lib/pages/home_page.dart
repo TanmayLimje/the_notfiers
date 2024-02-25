@@ -34,7 +34,7 @@ class _HomePageState extends State<HomePage> {
         title: const Text('The Notifiers'),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: _openAddAlertOverlay,
             icon: const Icon(Icons.add),
           )
         ],

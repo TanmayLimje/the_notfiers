@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:the_notfiers/pages/home_page.dart';
 
 void main() {
   runApp(const App());
@@ -9,12 +10,8 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text("The Notifiers!"),
-        ),
-      ),
+    return const MaterialApp(
+      home: HomePage(),
     );
   }
 }

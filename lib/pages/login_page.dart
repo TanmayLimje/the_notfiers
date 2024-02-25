@@ -10,8 +10,16 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Text("andka"),
+    return const Scaffold(
+      body: Column(
+        children: [
+          Text("Tanmay"),
+          SizedBox(
+            height: 222,
+          ),
+          Text("manish"),
+        ],
+      ),
     );
   }
 }

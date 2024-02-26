@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "403024144797",
+    "project_id": "the-notifier-80609",
+    "storage_bucket": "the-notifier-80609.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:403024144797:android:d0a729bc4487f812f3e774",
+        "android_client_info": {
+          "package_name": "com.example.the_notfiers"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0jFvlCUMcoZ2OLXeX0hCrCr2Pigo9HmI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

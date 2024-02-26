@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:the_notfiers/models/msg.dart';
 import 'package:the_notfiers/widgets/msg_list.dart';
+import 'package:the_notfiers/widgets/new_msg.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -23,9 +25,20 @@ class _HomePageState extends State<HomePage> {
         content: "JOIN CLASSROOM",
         id: "1",
         date: DateTime.now()),
+    Message(
+      title: 'Class test 1',
+      content: 'collect classtext paper',
+      id: '2',
+      date: DateTime.now(),
+    )
   ];
 
-  void _openAddAlertOverlay() {}
+  void _openAddAlertOverlay() {
+    showModalBottomSheet(
+        isScrollControlled: true,
+        context: context,
+        builder: (ctx) => const NewMessage());
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -38,33 +51,67 @@ class _HomePageState extends State<HomePage> {
             icon: const Icon(Icons.add),
           )
         ],
-        backgroundColor: const Color.fromARGB(255, 243, 223, 162),
+        //backgroundColor: const Color.fromARGB(255, 243, 223, 162),
       ),
-      body: Container(
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              colors: [
-                Color.fromARGB(255, 0, 0, 0),
-                Color.fromARGB(255, 43, 38, 38),
-              ],
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
+      body: //Container(
+          // decoration: const BoxDecoration(
+          //   gradient: LinearGradient(
+          //     colors: [
+          //       Color.fromARGB(255, 237, 57, 225),
+          //       Color.fromARGB(255, 232, 44, 84),
+          //     ],
+          //     begin: Alignment.topLeft,
+          //     end: Alignment.bottomRight,
+          //   ),
+          // ),
+          Column(
+        children: [
+          const SizedBox(
+            height: 18,
+          ),
+          // const Text(
+          //   "some random text",
+          //   style: TextStyle(color: Colors.black),
+          // ),
+          Center(
+            child: Image.asset(
+              'lib/images/college_logo.png',
+              width: 350,
             ),
           ),
-          child: Column(
-            children: [
-              const SizedBox(
-                height: 220,
+          Expanded(
+            child: MessageList(messages: _dummyMsg),
+          ),
+        ],
+      ),
+      bottomNavigationBar: Container(
+        color: Colors.black,
+        child: const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
+          child: GNav(
+            backgroundColor: Colors.black,
+            color: Colors.white,
+            activeColor: Colors.white,
+            tabBackgroundColor: Colors.grey,
+            padding: EdgeInsets.all(8),
+            gap: 8,
+            tabs: [
+              GButton(
+                icon: Icons.home,
+                text: 'Home',
               ),
-              const Text(
-                "some random text",
-                style: TextStyle(color: Colors.white),
+              GButton(
+                icon: Icons.search,
+                text: 'Search',
               ),
-              Expanded(
-                child: MessageList(messages: _dummyMsg),
+              GButton(
+                icon: Icons.person_rounded,
+                text: 'Settings',
               ),
             ],
-          )),
+          ),
+        ),
+      ),
     );
   }
 }
